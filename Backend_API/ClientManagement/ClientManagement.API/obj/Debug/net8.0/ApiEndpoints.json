@@ -1,0 +1,81 @@
+[
+  {
+    "ContainingType": "ClientManagement.API.Controllers.HelpServiceController",
+    "Method": "GetAll",
+    "RelativePath": "api/HelpService",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClientManagement.API.Controllers.HelpServiceController",
+    "Method": "Create",
+    "RelativePath": "api/HelpService",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addHelpServiceDto",
+        "Type": "ClientManagement.API.Models.DTO.AddHelpServiceDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClientManagement.API.Controllers.HelpServiceController",
+    "Method": "GetById",
+    "RelativePath": "api/HelpService/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClientManagement.API.Controllers.HelpServiceController",
+    "Method": "Update",
+    "RelativePath": "api/HelpService/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateHelpServiceDto",
+        "Type": "ClientManagement.API.Models.DTO.UpdateHelpServiceDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClientManagement.API.Controllers.HelpServiceController",
+    "Method": "Delete",
+    "RelativePath": "api/HelpService/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
