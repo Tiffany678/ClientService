@@ -28,7 +28,7 @@ namespace ClientManagement.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("DateOfBirth")
+                    b.Property<DateTime?>("DateOfBirth")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
@@ -39,7 +39,7 @@ namespace ClientManagement.API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("HelpServicesId")
+                    b.Property<Guid>("HelpServiceId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("LastName")
@@ -50,14 +50,35 @@ namespace ClientManagement.API.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<string>("ProfileImageUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("HelpServicesId");
+                    b.HasIndex("HelpServiceId");
 
                     b.ToTable("Clients");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("f7248fc3-2585-4efb-8d1d-1c555f4087f6"),
+                            DateOfBirth = new DateTime(2000, 5, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "52Tiffany.Yang@gmaill.com",
+                            FirstName = "Tiffany",
+                            HelpServiceId = new Guid("f808ddcd-b5e5-4d80-b732-1ca523e48434"),
+                            LastName = "Yang",
+                            Mobile = 91254684566L
+                        },
+                        new
+                        {
+                            Id = new Guid("6884f7d7-ad1f-4101-8df3-7a6fa7387d81"),
+                            DateOfBirth = new DateTime(1990, 5, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "John.Doe@gmail.com",
+                            FirstName = "John",
+                            HelpServiceId = new Guid("f808ddcd-b5e5-4d80-b732-1ca523e48434"),
+                            LastName = "Doe",
+                            Mobile = 91254684586L
+                        });
                 });
 
             modelBuilder.Entity("ClientManagement.API.Models.Domain.HelpService", b =>
@@ -101,13 +122,13 @@ namespace ClientManagement.API.Migrations
 
             modelBuilder.Entity("ClientManagement.API.Models.Domain.Client", b =>
                 {
-                    b.HasOne("ClientManagement.API.Models.Domain.HelpService", "HelpServices")
+                    b.HasOne("ClientManagement.API.Models.Domain.HelpService", "HelpService")
                         .WithMany()
-                        .HasForeignKey("HelpServicesId")
+                        .HasForeignKey("HelpServiceId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("HelpServices");
+                    b.Navigation("HelpService");
                 });
 #pragma warning restore 612, 618
         }

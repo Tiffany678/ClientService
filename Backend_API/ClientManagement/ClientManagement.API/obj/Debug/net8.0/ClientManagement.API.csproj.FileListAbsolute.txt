@@ -61,6 +61,7 @@ C:\Project\ClientManagement\Backend_API\ClientManagement\ClientManagement.API\ob
 C:\Project\ClientManagement\Backend_API\ClientManagement\ClientManagement.API\obj\Debug\net8.0\ClientManagement.API.csproj.CoreCompileInputs.cache
 C:\Project\ClientManagement\Backend_API\ClientManagement\ClientManagement.API\obj\Debug\net8.0\ClientManagement.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Project\ClientManagement\Backend_API\ClientManagement\ClientManagement.API\obj\Debug\net8.0\ClientManagement.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Project\ClientManagement\Backend_API\ClientManagement\ClientManagement.API\obj\Debug\net8.0\ClientManagement.API.sourcelink.json
 C:\Project\ClientManagement\Backend_API\ClientManagement\ClientManagement.API\obj\Debug\net8.0\staticwebassets.build.json
 C:\Project\ClientManagement\Backend_API\ClientManagement\ClientManagement.API\obj\Debug\net8.0\staticwebassets.development.json
 C:\Project\ClientManagement\Backend_API\ClientManagement\ClientManagement.API\obj\Debug\net8.0\staticwebassets\msbuild.ClientManagement.API.Microsoft.AspNetCore.StaticWebAssets.props

@@ -13,6 +13,10 @@ namespace ClientManagement.API.Mappings
             CreateMap<HelpService, AddHelpServiceDto>().ReverseMap();
             CreateMap<HelpService, UpdateHelpServiceDto>().ReverseMap();
 
+            CreateMap<Client, ClientDto>().ReverseMap();
+            CreateMap<Client, AddClientRequestDto>().ReverseMap();
+            CreateMap<Client, UpdateClientRequestDto>().ReverseMap();
+
         }
     }
 }

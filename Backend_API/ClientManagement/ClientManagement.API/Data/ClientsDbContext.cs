@@ -48,34 +48,33 @@ namespace ClientManagement.API.Data
 
 
          
-          // var clients = new List<Client>
-          // {
-          //     new Client
-          //     {
-          //         Id = Guid.Parse("f7248fc3-2585-4efb-8d1d-1c555f4087f6"),
-          //         FirstName = "Tiffany",
-          //         LastName = "Yang",
-          //         DateOfBirth = new DateTime(1994, 3, 23),
-          //          Email = "52Tiffany.Yang@gmaill.com",
-          //         Mobile = 91254684566,
-          //         ProfileImageUrl = "",
-          //         HelpServicesId = Guid.Parse("ea294873-7a8c-4c0f-bfa7-a2eb492cbf8c")
-          //     },
-          //     new Client
-          //     {
-          //         Id = Guid.Parse("6884f7d7-ad1f-4101-8df3-7a6fa7387d81"),
-          //         FirstName = "John",
-          //         LastName = "Doe",
-          //         DateOfBirth = new DateTime(2000, 3, 23),
-          //         Email = "John.Doe@gmail.com",
-          //         Mobile = 91254684586,
-          //         ProfileImageUrl = "",
-          //         HelpServicesId = Guid.Parse("f808ddcd-b5e5-4d80-b732-1ca523e48434")
-          //     },
-          //     
-          // };
-          //
-          // modelBuilder.Entity<Client>().HasData(clients);
+         var clients = new List<Client>
+         {
+             new Client
+             {
+                 Id = Guid.Parse("f7248fc3-2585-4efb-8d1d-1c555f4087f6"),
+                 FirstName = "Tiffany",
+                 LastName = "Yang",
+                 DateOfBirth = DateTime.Parse("2000-05-21"),
+                  Email = "52Tiffany.Yang@gmaill.com",
+                 Mobile = 91254684566,
+                 ProfileImageUrl = null,
+                 HelpServiceId = Guid.Parse("f808ddcd-b5e5-4d80-b732-1ca523e48434")
+             },
+            new Client
+            {
+                Id = Guid.Parse("6884f7d7-ad1f-4101-8df3-7a6fa7387d81"),
+                FirstName = "John",
+                LastName = "Doe",
+                DateOfBirth = DateTime.Parse("1990-05-21"),
+                Email = "John.Doe@gmail.com",
+                Mobile = 91254684586,
+                ProfileImageUrl = null,
+                HelpServiceId = Guid.Parse("f808ddcd-b5e5-4d80-b732-1ca523e48434")
+            },
+            
+        };
+         modelBuilder.Entity<Client>().HasData(clients);
         }
     }
 }

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ClientManagement.API.Migrations
 {
     /// <inheritdoc />
-    public partial class Migration1 : Migration
+    public partial class Migration4 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -33,18 +33,18 @@ namespace ClientManagement.API.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Mobile = table.Column<long>(type: "bigint", nullable: false),
-                    ProfileImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    HelpServicesId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    ProfileImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    HelpServiceId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Clients", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Clients_HelpServices_HelpServicesId",
-                        column: x => x.HelpServicesId,
+                        name: "FK_Clients_HelpServices_HelpServiceId",
+                        column: x => x.HelpServiceId,
                         principalTable: "HelpServices",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -60,10 +60,19 @@ namespace ClientManagement.API.Migrations
                     { new Guid("f808ddcd-b5e5-4d80-b732-1ca523e48434"), "Chronic unemployment and underemployment are often at the root of individual and family hardship and dysfunction. Family Service League has a series of proven job training and vocational programs designed to build skills and confidence.", "Training & Employment" }
                 });
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Clients_HelpServicesId",
+            migrationBuilder.InsertData(
                 table: "Clients",
-                column: "HelpServicesId");
+                columns: new[] { "Id", "DateOfBirth", "Email", "FirstName", "HelpServiceId", "LastName", "Mobile", "ProfileImageUrl" },
+                values: new object[,]
+                {
+                    { new Guid("6884f7d7-ad1f-4101-8df3-7a6fa7387d81"), new DateTime(1990, 5, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), "John.Doe@gmail.com", "John", new Guid("f808ddcd-b5e5-4d80-b732-1ca523e48434"), "Doe", 91254684586L, null },
+                    { new Guid("f7248fc3-2585-4efb-8d1d-1c555f4087f6"), new DateTime(2000, 5, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), "52Tiffany.Yang@gmaill.com", "Tiffany", new Guid("f808ddcd-b5e5-4d80-b732-1ca523e48434"), "Yang", 91254684566L, null }
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Clients_HelpServiceId",
+                table: "Clients",
+                column: "HelpServiceId");
         }
 
         /// <inheritdoc />

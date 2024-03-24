@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Identity;
 
 using Microsoft.Extensions.FileProviders;
 using ClientManagement.API.Repositories;
-using ClientManagement.API.Mappings;
+
 
 
 
@@ -25,7 +25,9 @@ builder.Services.AddDbContext<ClientsDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("ClientsConnectionString")));
 
 builder.Services.AddScoped<IHelpServiceRepository, SQLHelpServiceRepository>();
-builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
+builder.Services.AddScoped<IClientRepository, SQLClientRepository>();
+// builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 
 var app = builder.Build();

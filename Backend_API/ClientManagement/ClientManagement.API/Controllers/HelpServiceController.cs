@@ -102,5 +102,9 @@ namespace ClientManagement.API.Controllers
 
             return Ok(mapper.Map<HelpServiceDto>(helpServiceDomainModel));
         }
+
+
+      
+
     }
 }
