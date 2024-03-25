@@ -50,60 +50,60 @@ namespace ClientManagement.API.Controllers
             return Ok(mapper.Map<HelpServiceDto>(helpServiceDomain));
         }
 
-        [HttpPost]
-
-        public async Task<IActionResult> Create([FromBody] AddHelpServiceDto addHelpServiceDto)
-        {
-            // Map or Convert DTO to Domain Model
-            var helpServiceDomainModel = mapper.Map<HelpService>(addHelpServiceDto);
-
-            // Use Domain Model to create Region
-            helpServiceDomainModel = await helpServiceRepository.CreateAsync(helpServiceDomainModel);
-
-            // Map Domain model back to DTO
-            var helpServiceDto = mapper.Map<HelpServiceDto>(helpServiceDomainModel);
-
-            return CreatedAtAction(nameof(GetById), new { id = helpServiceDto.Id }, helpServiceDto);
-        }
-       
-        [HttpPut]
-        [Route("{id:Guid}")]
-    
-        public async Task<IActionResult> Update([FromRoute] Guid id, [FromBody] UpdateHelpServiceDto updateHelpServiceDto)
-        {
-
-            // Map DTO to Domain Model
-            var helpServiceDomainModel = mapper.Map<HelpService>(updateHelpServiceDto);
-
-            // Check if region exists
-            helpServiceDomainModel = await helpServiceRepository.UpdateAsync(id, helpServiceDomainModel);
-
-            if (helpServiceDomainModel == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(mapper.Map<HelpServiceDto>(helpServiceDomainModel));
-        }
-
-
-
-        [HttpDelete]
-        [Route("{id:Guid}")]
-  
-        public async Task<IActionResult> Delete([FromRoute] Guid id)
-        {
-            var helpServiceDomainModel = await helpServiceRepository.DeleteAsync(id);
-
-            if (helpServiceDomainModel == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(mapper.Map<HelpServiceDto>(helpServiceDomainModel));
-        }
-
-
+//       [HttpPost]
+//
+//       public async Task<IActionResult> Create([FromBody] AddHelpServiceDto addHelpServiceDto)
+//       {
+//           // Map or Convert DTO to Domain Model
+//           var helpServiceDomainModel = mapper.Map<HelpService>(addHelpServiceDto);
+//
+//           // Use Domain Model to create Region
+//           helpServiceDomainModel = await helpServiceRepository.CreateAsync(helpServiceDomainModel);
+//
+//           // Map Domain model back to DTO
+//           var helpServiceDto = mapper.Map<HelpServiceDto>(helpServiceDomainModel);
+//
+//           return CreatedAtAction(nameof(GetById), new { id = helpServiceDto.Id }, helpServiceDto);
+//       }
+//      
+//       [HttpPut]
+//       [Route("{id:Guid}")]
+//   
+//       public async Task<IActionResult> Update([FromRoute] Guid id, [FromBody] UpdateHelpServiceDto updateHelpServiceDto)
+//       {
+//
+//           // Map DTO to Domain Model
+//           var helpServiceDomainModel = mapper.Map<HelpService>(updateHelpServiceDto);
+//
+//           // Check if region exists
+//           helpServiceDomainModel = await helpServiceRepository.UpdateAsync(id, helpServiceDomainModel);
+//
+//           if (helpServiceDomainModel == null)
+//           {
+//               return NotFound();
+//           }
+//
+//           return Ok(mapper.Map<HelpServiceDto>(helpServiceDomainModel));
+//       }
+//
+//
+//
+//       [HttpDelete]
+//       [Route("{id:Guid}")]
+// 
+//       public async Task<IActionResult> Delete([FromRoute] Guid id)
+//       {
+//           var helpServiceDomainModel = await helpServiceRepository.DeleteAsync(id);
+//
+//           if (helpServiceDomainModel == null)
+//           {
+//               return NotFound();
+//           }
+//
+//           return Ok(mapper.Map<HelpServiceDto>(helpServiceDomainModel));
+//       }
+//
+//
       
 
     }

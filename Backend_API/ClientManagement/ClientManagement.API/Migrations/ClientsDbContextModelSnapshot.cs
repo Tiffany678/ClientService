@@ -17,7 +17,7 @@ namespace ClientManagement.API.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.3")
+                .HasAnnotation("ProductVersion", "8.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -63,10 +63,10 @@ namespace ClientManagement.API.Migrations
                         {
                             Id = new Guid("f7248fc3-2585-4efb-8d1d-1c555f4087f6"),
                             DateOfBirth = new DateTime(2000, 5, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "52Tiffany.Yang@gmaill.com",
-                            FirstName = "Tiffany",
+                            Email = "Corene.Wall@gmaill.com",
+                            FirstName = "Corene",
                             HelpServiceId = new Guid("f808ddcd-b5e5-4d80-b732-1ca523e48434"),
-                            LastName = "Yang",
+                            LastName = "Wall",
                             Mobile = 91254684566L
                         },
                         new
@@ -103,20 +103,38 @@ namespace ClientManagement.API.Migrations
                         new
                         {
                             Id = new Guid("54466f17-02af-48e7-8ed3-5a4a8bfacf6f"),
-                            Description = "Family Service League provides prevention and comprehensive addiction treatment services to Suffolk county adults and adolescents—along with help and support to the families who love them. Our program features screenings, assessments and evaluations to determine the level of care needed to support outpatient recovery and abstinence.",
+                            Description = "Family Service League provides prevention and comprehensive addiction treatment services to Suffolk county adults and adolescents—along with help and support to the families who love them. Our program features screenings, assessments and evaluations to determine the level of care needed to support outpatient recovery and abstinence. Each person who enters a FSL medically supervised program—either voluntarily or via mandate—is prescribed a plan to fit their specific needs.",
                             ServiceName = "Addiction Treatment Services"
                         },
                         new
                         {
                             Id = new Guid("ea294873-7a8c-4c0f-bfa7-a2eb492cbf8c"),
-                            Description = "Family Service League provides a wide range of children and family services to help ensure that every child in Suffolk county has the opportunity to excel and choose the right path no matter their home situation.",
+                            Description = "Family Service League provides a wide range of children and family services to help ensure that every child in Suffolk county has the opportunity to excel and choose the right path no matter their home situation. Programs and resources available offer professional guidance, counseling and positive, character-building recreational activities to support those in need and who may be most at risk.",
                             ServiceName = "Children Services"
                         },
                         new
                         {
                             Id = new Guid("f808ddcd-b5e5-4d80-b732-1ca523e48434"),
-                            Description = "Chronic unemployment and underemployment are often at the root of individual and family hardship and dysfunction. Family Service League has a series of proven job training and vocational programs designed to build skills and confidence.",
+                            Description = "Chronic unemployment and underemployment are often at the root of individual and family hardship and dysfunction. Family Service League has a series of proven job training and vocational programs designed to build skills and confidence. Offering job skill improvement, job search services and placement assistance, these programs help those who have had difficulty finding and maintaining regular employment, as well as job seekers who are battling mental illness.",
                             ServiceName = "Training & Employment"
+                        },
+                        new
+                        {
+                            Id = new Guid("65da73d1-5564-41f4-a49b-5de53e9218ff"),
+                            Description = "Family Service League offers numerous programs and services to help families in need in Suffolk county. Our professionally trained staff and volunteers are available to assist everyone from at-risk youth to expectant and new parents with education, counseling and referrals to helpful resources.",
+                            ServiceName = "Family & Community Support"
+                        },
+                        new
+                        {
+                            Id = new Guid("7ee9b631-d9ff-466a-8730-54a83337cf7c"),
+                            Description = "Family Service League’s housing programs focus on providing emergency housing and supportive services to chronically homeless individuals and families throughout Suffolk county. Homelessness is often the result of a disability, mental illness or substance abuse, and it can be a daunting task to overcome the effects of these crippling conditions while attempting to become self-sufficient. We’re here to help.",
+                            ServiceName = "Housing & Homeless Services"
+                        },
+                        new
+                        {
+                            Id = new Guid("1b634fa4-4eff-42f1-9784-f0a14112e2b7"),
+                            Description = "Family Service League is one of the foremost providers of mental health services on Long Island, treating all aspects of psychiatric illness and emotional distress for every age group and socioeconomic background. Our expert staff works collaboratively with healthcare providers and care management services to achieve true integrated healthcare for individuals impacted by mental illness—and the families who love them.",
+                            ServiceName = "Mental health & Integrated Care"
                         });
                 });
 
